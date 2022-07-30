@@ -1,12 +1,12 @@
 {
   "response": [
     {
-      "datetime": "1649806531",
-      "filename": "lineage-19.1-20220412-UNOFFICIAL-star2lte.zip",
-      "id": "8dd09744f359d38814877efc748c3ea82c340f982495da6775c7f94ed819819d",
+      "datetime": "1659183107",
+      "filename": "lineage-19.1-20220730-UNOFFICIAL-star2lte.zip",
+      "id": "c2793539b757fdc88fc743facaff3ff196977cd1bb671e19a253d98bfb526c09",
       "romtype": "UNOFFICIAL",
-      "size": "812689442",
-      "url": "https://github.com/Exynoobs/OTA/releases/download/star2lte-20220412/lineage-19.1-20220412-UNOFFICIAL-star2lte.zip",
+      "size": "790061353",
+      "url": "https://github.com/Exynoobs/OTA/releases/download/star2lte-20220730/lineage-19.1-20220730-UNOFFICIAL-star2lte.zip",
       "version": "19.1"
     }
   ]
