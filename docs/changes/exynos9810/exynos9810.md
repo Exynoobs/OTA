@@ -1,3 +1,12 @@
+## 2022-07-30
+- Fixed 5Ghz AP - Used SM-N770F Wi-Fi blobs and bcmdhd kernel driver
+- Disabled APEX
+- Fixed flashing
+- Added config for SPen
+- Shrunk system parition size  to make N variants work
+- Updated pinned RIL blobs from SM-N770F
+- Updated blobs from FXXUHFVB4
+
 ## 2022-04-12
 - Fixed BT audio issues in call and media - for real now
 
