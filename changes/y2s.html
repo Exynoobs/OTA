@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Changelog for Samsung Galaxy S20+</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Changelog for Samsung Galaxy S20+" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Changelog for Samsung Galaxy S20+" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Changelog for Samsung Galaxy S20+","url":"/OTA/changes/y2s.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/OTA/assets/css/style.css?v=">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/OTA/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name">Changelog for Samsung Galaxy S20+</h1>
+      <h2 class="project-tagline"></h2>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <p><a href="/OTA/">Home</a></p>
+
+<h1 id="changelog-for-samsung-galaxy-s20-y2s">Changelog for Samsung Galaxy S20+ (y2s)</h1>
+
+<h2 id="2022-03-23">2022-03-23</h2>
+<p><strong>NOTE: GOOGLE MAPS ARE BROKEN WITH THIS RELEASE. THIS IS AN ISSUE ON SAMSUNG’S SIDE, UNTIL WE FIX IT USE MAPS GO OR ANY OTHER ALTERNATIVE.</strong></p>
+
+<p><strong>NOTE#2: IF FLASHING GOOGLE APPS, DO NOT SET UP NETWORK OR SECURITY OR ACCOUNT ON FIRST BOOT. SKIP EVERYTHING AND THEN SET UP THE ACCOUNT WHEN YOU GET PAST SETUP. THIS IS AS WELL NOT ISSUE ON OUR SIDE.</strong></p>
+
+<p><strong>NOTE#3: IF YOU FLASHED ANY THIRD PARTY PACKAGES (GAPPS etc.) YOU NEED TO REFLASH THEM AGAIN, BECAUSE ADDON.D WILL NOT WORK! IF YOU STILL HAVE ISSUES, DO A CLEAN FLASH.)</strong></p>
+
+<ul>
+  <li>Updated to lineage-19.1</li>
+  <li>Updated stock blobs/kernel</li>
+  <li>Started building AdvancedDisplay again</li>
+  <li>Wired up mDNIe features</li>
+  <li>Configured power hal</li>
+  <li>Resolved battery issues from first release</li>
+  <li>Enabled high refresh rate modes (96hz/120hz) - find it under display options</li>
+  <li>Forced resolution to 2400x1080 - By default, that resolution is used on stock as well, couldnt make high refresh rate work otherwise</li>
+  <li>Tons of other stuff, check github</li>
+</ul>
+
+<h2 id="2022-01-11">2022-01-11</h2>
+<ul>
+  <li>Initial lineage-19 release</li>
+</ul>
+
+<h2 id="2021-11-19-x1s-fixup">2021-11-19 (x1s fixup)</h2>
+<ul>
+  <li>Fixed x1s resolution issues/leftovers</li>
+</ul>
+
+<h2 id="2021-11-18">2021-11-18</h2>
+<ul>
+  <li>Updated sources from latest samsung XXSCDUJ5 Release</li>
+  <li>Added firmware assertion</li>
+  <li>For firmware updates, check here: https://github.com/Linux4/firmware-update/releases</li>
+</ul>
+
+<h2 id="2021-10-23">2021-10-23</h2>
+<p><strong>NOTE: This build needs to be flashed manually, OTA will work again starting from next release</strong>
+<strong>NOTE #2: This will most probably be the last lineage-18.1 build. We will now focus work on lineage-19 instead</strong></p>
+<ul>
+  <li>Fixed OTA</li>
+  <li>Kanged autobrightness values from starlte + commonized them</li>
+  <li>Dropped SamsungDoze, switched to AOSP implementation which uses pickup sensor, no more accidental touches</li>
+  <li>removed unneded remove config_radio_access_family overlay</li>
+</ul>
+
+<h2 id="2021-10-16">2021-10-16</h2>
+<ul>
+  <li>Updated blobs/kernel from latest samsung release</li>
+  <li>WPA3 Fixed</li>
+  <li>Updated init.exynos990.rc/ueventd.rc from XXSDUE4</li>
+  <li>Cleaned up uneeded proprietary files</li>
+  <li>Cleaned up device manifest</li>
+  <li>Building Fastcharge HAL</li>
+  <li>Allow fastbootd to flash super/userdata partition</li>
+  <li>Sepolicy - addressed multiple denials</li>
+  <li>Major device tree refactor, adapted to standard lineageos devicetree structure</li>
+  <li>Updated Lineageos sources</li>
+</ul>
+
+<p>Major thanks to Tim and Rob for these updates</p>
+
+<h2 id="2021-05-21">2021-05-21</h2>
+
+<p><strong>NOTE:UPDATING THE RECOVERY AND FORMATTING DATA IS REQUIRED FOR THIS UPDATE, BECAUSE IT WILL NOT BOOT OTHERWISE.</strong>
+<strong>ADDITIONAL DATA FORMATTING WILL NOT BE NEEDED, THIS IS BECAUSE OF SWITCHING FROM EXT4 TO F2FS.</strong></p>
+
+<ul>
+  <li>Fixed USB tethering</li>
+  <li>Fixed OMX issues</li>
+  <li>Fixed audio issues</li>
+  <li>Fixed camera issues/switched to snap api1</li>
+  <li>Switched to F2FS, improved random write speed from 30 to 200 Mb/s</li>
+  <li>Switched to opensource NFC stack</li>
+  <li>Updated lineage sources</li>
+  <li>Updated kernel source to latest samsung release</li>
+  <li>Updated blobs and secpatch to latest samsung release</li>
+  <li>Enabled MAC randomisation</li>
+  <li>Enabled Wi-Fi direct</li>
+  <li>Disabled Wi-Fi Display</li>
+  <li>Building libbt-vendor from source</li>
+  <li>Commonized stock blobs</li>
+  <li>Enabled haptic text cursor</li>
+  <li>Enabled call recording</li>
+  <li>Addressed some more sepolicy denials</li>
+  <li>Added sepolicy for HDMI out</li>
+  <li>Added support for freeform windows and PiP mode</li>
+  <li>Enabled Multiuser</li>
+  <li>Improved SQlite storage speed</li>
+  <li>Adjusted powerhint</li>
+  <li>Fixed charging speed reporting on lockscreen</li>
+</ul>
+
+
+
+      <footer class="site-footer">
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>
