@@ -21,18 +21,21 @@ jobs:
 
       - uses: actions/cache@v4
         with:
-          path: vendor/bundle
+          path: docs/vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-gems-
 
       - name: Install dependencies
+        working-directory: ./docs
         run: |
           gem install bundler
-          bundle install --path vendor/bundle
+          bundle config set path 'vendor/bundle'
+          bundle install
 
       - name: Build Jekyll site
-        run: bundle exec jekyll build -s ./docs -c _config.yml -d ./_site
+        working-directory: ./docs
+        run: bundle exec jekyll build -s . -c _config.yml -d ../_site
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
