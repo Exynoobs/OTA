@@ -9,6 +9,7 @@
 {% fetch builds_raw ota_url %}
 {% json builds builds_raw %}
 {% assign build = builds.response[0] %}
+{% if build %}
 <a href="{{ build.url }}">{{ build.filename }}</a>
 <br>
 <a href="{{ build.url }}.sha256">sha256</a>
@@ -16,6 +17,9 @@
 <a href="{{ build.url | replace:'UNOFFICIAL','recovery' | replace:'.zip','.img' }}">{{ build.filename | replace:'UNOFFICIAL','recovery' | replace:'.zip','.img' }}</a>
 <br>
 <a href="{{ build.url | replace:'UNOFFICIAL','recovery' | replace:'.zip','.img' }}.sha256">sha256</a>
+{% else %}
+<em>No builds found for {{ page.codename }}.</em>
+{% endif %}
 
 ## Device specifications
 

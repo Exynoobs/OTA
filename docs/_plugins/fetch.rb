@@ -12,7 +12,12 @@ module JekyllFetch
 	if /(.+) (.+)/.match(@text)
     		base_url = context[$2]
     		resp = Net::HTTP.get_response(URI.parse(base_url.strip))
-    		context[$1] = resp.body
+    		if resp.is_a?(Net::HTTPSuccess)
+    		  context[$1] = resp.body
+    		else
+    		  # Provide an empty response array to avoid JSON parse or index errors downstream
+    		  context[$1] = '{"response":[]}'
+    		end
     		return ''
   	end
     end
