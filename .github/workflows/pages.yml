@@ -5,7 +5,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: '0 0 * * *'
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:
@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v4
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
@@ -23,14 +23,14 @@ jobs:
 
       - uses: jeffreytse/jekyll-deploy-action@v0.3.1
         with:
-          provider: 'github'
+          provider: "github"
           token: ${{ secrets.GITHUB_TOKEN }}
-          repository: ''
-          branch: 'gh-pages'
-          jekyll_src: './docs'
-          jekyll_cfg: '_config.yml'
-          jekyll_baseurl: ''
-          bundler_ver: '>=0'
-          cname: 'exynoobs.github.io/OTA/'
-          actor: ''
-          pre_build_commands: ''
+          repository: ""
+          branch: "gh-pages"
+          jekyll_src: "./docs"
+          jekyll_cfg: "_config.yml"
+          jekyll_baseurl: ""
+          bundler_ver: ">=0"
+          cname: "exynoobs.github.io/OTA/"
+          actor: ""
+          pre_build_commands: ""
