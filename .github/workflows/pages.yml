@@ -1,4 +1,4 @@
-name: Build and Deploy to Github Pages
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
@@ -14,6 +14,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-ruby@v4
+        with:
+          ruby-version: "3.1"
+
       - uses: actions/cache@v4
         with:
           path: vendor/bundle
@@ -21,21 +25,18 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
 
-      - name: Fix pacman keyring for Arch-based container
+      - name: Install dependencies
         run: |
-          sudo pacman-key --init
-          sudo pacman-key --populate archlinux
+          gem install bundler
+          bundle install --path vendor/bundle
 
-      - uses: jeffreytse/jekyll-deploy-action@v0.3.1
+      - name: Build Jekyll site
+        run: bundle exec jekyll build -s ./docs -c _config.yml -d ./_site
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          provider: "github"
-          token: ${{ secrets.GITHUB_TOKEN }}
-          repository: ""
-          branch: "gh-pages"
-          jekyll_src: "./docs"
-          jekyll_cfg: "_config.yml"
-          jekyll_baseurl: ""
-          bundler_ver: ">=0"
-          cname: "exynoobs.github.io/OTA/"
-          actor: ""
-          pre_build_commands: ""
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./_site
+          cname: exynoobs.github.io/OTA/
