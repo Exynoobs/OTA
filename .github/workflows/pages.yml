@@ -21,6 +21,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
 
+      - name: Fix pacman keyring for Arch-based container
+        run: |
+          sudo pacman-key --init
+          sudo pacman-key --populate archlinux
+
       - uses: jeffreytse/jekyll-deploy-action@v0.3.1
         with:
           provider: "github"
