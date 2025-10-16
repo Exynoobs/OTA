@@ -408,3 +408,63 @@ a[href="https://coinmarketcap.com/"] > svg[width="94"][height="16"] > path {
     color: var(--darkreader-neutral-text) !important;
 }
 /* End DarkReader */
+
+/* Enhancements */
+.main-content {
+    line-height: 1.7;
+}
+
+.main-content h1 {
+    margin-top: 0.5rem;
+}
+
+.main-content a[href$='.zip'],
+.main-content a[href$='.img'],
+.main-content a[href$='.sha256'] {
+    display: inline-block;
+    margin: 0.25rem 0.5rem 0.25rem 0;
+    padding: 0.45rem 0.75rem;
+    border: 1px solid rgba(48, 52, 54, 0.35);
+    border-radius: 6px;
+    background: rgba(24, 26, 27, 0.18);
+    color: #e8e6e3;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.main-content a[href$='.zip']:hover,
+.main-content a[href$='.img']:hover,
+.main-content a[href$='.sha256']:hover {
+    background: rgba(24, 26, 27, 0.3);
+    border-color: rgba(48, 52, 54, 0.5);
+}
+
+.main-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.main-content table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+
+.main-content table td,
+.main-content table th {
+    padding: 10px 12px;
+}
+
+.main-content table tr:nth-child(odd) td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.main-content table tr:hover td {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.main-content hr {
+    margin: 2rem 0;
+}
