@@ -58,7 +58,7 @@ tar --format=ustar -cvf recovery.tar recovery.img
 4. Put device in Download mode, connect USB. Odin should show a COM port.
 5. Click AP and select `recovery.tar`.
 6. Click Start and wait for the transfer to complete.
-7. Without booting to system, force reboot then immediately boot to recovery (Volume Up + Power).
+7. Without booting to system, force reboot then immediately boot to recovery (Plug in USB + Volume Up + Power).
 
 ## Installing Lineage Recovery (Heimdall on Linux/macOS)
 
@@ -70,7 +70,7 @@ tar --format=ustar -cvf recovery.tar recovery.img
 heimdall flash --RECOVERY recovery.img --no-reboot
 ```
 
-4. When flashing completes, manually boot to recovery (Volume Up + Power).
+4. When flashing completes, manually boot to recovery (Plug in USB + Volume Up + Power).
 
 ## Installing vbmeta (to disable verification)
 
@@ -92,7 +92,7 @@ Then immediately boot to recovery (do not boot to system yet).
 3. Sideload the build from your computer:
 
 ```bash
-adb sideload {{ build.url | default: '<path-to-build.zip>' }}
+adb sideload <lineageos-zip-name.zip>
 ```
 
 Tip: `adb` may show 47% and exit messages while still succeeding.
