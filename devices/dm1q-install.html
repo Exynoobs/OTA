@@ -98,7 +98,7 @@
   <li>Put device in Download mode, connect USB. Odin should show a COM port.</li>
   <li>Click AP and select <code class="language-plaintext highlighter-rouge">recovery.tar</code>.</li>
   <li>Click Start and wait for the transfer to complete.</li>
-  <li>Without booting to system, force reboot then immediately boot to recovery (Volume Up + Power).</li>
+  <li>Without booting to system, force reboot then immediately boot to recovery (Plug in USB + Volume Up + Power).</li>
 </ol>
 
 <h2 id="installing-lineage-recovery-heimdall-on-linuxmacos">Installing Lineage Recovery (Heimdall on Linux/macOS)</h2>
@@ -113,7 +113,7 @@
 </code></pre></div></div>
 
 <ol>
-  <li>When flashing completes, manually boot to recovery (Volume Up + Power).</li>
+  <li>When flashing completes, manually boot to recovery (Plug in USB + Volume Up + Power).</li>
 </ol>
 
 <h2 id="installing-vbmeta-to-disable-verification">Installing vbmeta (to disable verification)</h2>
@@ -138,7 +138,7 @@
   <li>Sideload the build from your computer:</li>
 </ol>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adb sideload https://github.com/Exynoobs/OTA/releases/download/dm1q-20251016/lineage-23.0-20251016-UNOFFICIAL-dm1q.zip
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adb sideload &lt;lineageos-zip-name.zip&gt;
 </code></pre></div></div>
 
 <p>Tip: <code class="language-plaintext highlighter-rouge">adb</code> may show 47% and exit messages while still succeeding.</p>
