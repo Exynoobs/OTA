@@ -17,6 +17,12 @@
 <a href="{{ build.url | replace:'UNOFFICIAL','recovery' | replace:'.zip','.img' }}">{{ build.filename | replace:'UNOFFICIAL','recovery' | replace:'.zip','.img' }}</a>
 <br>
 <a href="{{ build.url | replace:'UNOFFICIAL','recovery' | replace:'.zip','.img' }}.sha256">sha256</a>
+{% if page.codename == 'dm1q' %}
+<br>
+<a href="{{ build.url | replace: build.filename, 'vbmeta.img' }}">vbmeta.img</a>
+<br>
+<a href="{{ build.url | replace: build.filename, 'vbmeta.img.sha256' }}">sha256</a>
+{% endif %}
 {% else %}
 <em>No builds found for {{ page.codename }}.</em>
 {% endif %}
