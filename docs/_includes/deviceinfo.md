@@ -5,6 +5,10 @@
 
 [Changelog]({{ "/changes/" | append: page.codename | append: ".html" | relative_url }})
 
+{% if page.codename == 'dm1q' %}
+[Install instructions]({{ "/devices/" | append: page.codename | append: "-install.html" | relative_url }})
+{% endif %}
+
 {% assign ota_url = site.lineage_ota_base_url | append: page.codename | append: ".json" %}
 {% fetch builds_raw ota_url %}
 {% json builds builds_raw %}
