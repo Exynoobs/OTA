@@ -21,6 +21,12 @@ codename: q5q
 >
 > vbmeta: <a href="{{ vbmeta_url }}">vbmeta.img</a> — <a href="{{ vbmeta_url }}.sha256">sha256</a> > {% endif %}
 
+## Tips for Z fold5
+
+- Use recovery on the outer screen, while device is folded.
+- While booting, boot it unfolded. Complete the setup while device is opened
+- The outer screen will stay on until you fold it for the first time.
+
 ## Basic requirements
 
 - Read through the instructions once before following them.
@@ -31,6 +37,7 @@ codename: q5q
 
 ## Pre-Install instructions (unlock + vbmeta)
 
+- STOCK F946BXXS5EYI1 OR equivalent for your device model is required
 - Enable Developer options, then enable OEM unlock.
 - Download `vbmeta.img` (link above). Create a TAR for flashing tools that require it:
 
