@@ -5,7 +5,7 @@
 
 [Changelog]({{ "/changes/" | append: page.codename | append: ".html" | relative_url }})
 
-{% if page.codename == 'dm1q' %}
+{% if page.codename == 'dm1q' or page.codename == 'q5q' %}
 [Install instructions]({{ "/devices/" | append: page.codename | append: "-install.html" | relative_url }})
 {% endif %}
 
@@ -21,7 +21,7 @@
 <a href="{{ build.url | replace:'UNOFFICIAL','recovery' | replace:'.zip','.img' }}">{{ build.filename | replace:'UNOFFICIAL','recovery' | replace:'.zip','.img' }}</a>
 <br>
 <a href="{{ build.url | replace:'UNOFFICIAL','recovery' | replace:'.zip','.img' }}.sha256">sha256</a>
-{% if page.codename == 'dm1q' %}
+{% if page.codename == 'dm1q' or page.codename == 'q5q' %}
 <br>
 <a href="{{ build.url | replace: build.filename, 'vbmeta.img' }}">vbmeta.img</a>
 <br>
