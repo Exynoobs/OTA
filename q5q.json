@@ -1,0 +1,13 @@
+{
+  "response": [
+    {
+      "datetime": "1767698566",
+      "filename": "lineage-23.0-20260106-UNOFFICIAL-q5q.zip",
+      "id": "5697beafdc3bdf9bb77700a3193f3a02d3b82c00d49dd89ed887f16be75e1a65",
+      "romtype": "UNOFFICIAL",
+      "size": "1573840663",
+      "url": "https://github.com/Exynoobs/OTA/releases/download/q5q-20260106/lineage-23.0-20260106-UNOFFICIAL-q5q.zip",
+      "version": "23.0"
+    }
+  ]
+}
