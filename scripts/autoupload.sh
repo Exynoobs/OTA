@@ -30,15 +30,27 @@ git -C $REPODIR commit -m "OTA: $DEVICE: $DATE"
 git -C $REPODIR tag "$RELEASENAME"
 git -C $REPODIR push origin HEAD:staging --tags
 
-hub -C $REPODIR release create \
-    -a $BUILDDIR/$RECOVERY_NAME \
-    -a $REPODIR/$RECOVERY_NAME.sha256 \
-    -a $ZIP \
-    -a $REPODIR/$FILENAME.sha256 \
-    $( [ "$DEVICE" = "dm1q" || "$DEVICE" = "q5q" ] && echo "-a $BUILDDIR/vbmeta.img -a $REPODIR/vbmeta.img.sha256" ) \
-    -m "$DEVICE: $DATE" \
-    -t $(git -C $REPODIR rev-parse HEAD) \
-    $RELEASENAME
+if [ "$DEVICE" = "dm1q" ] || [ "$DEVICE" = "q5q" ]; then
+    hub -C $REPODIR release create \
+        -a $BUILDDIR/$RECOVERY_NAME \
+        -a $REPODIR/$RECOVERY_NAME.sha256 \
+        -a $ZIP \
+        -a $REPODIR/$FILENAME.sha256 \
+        -a $BUILDDIR/vbmeta.img \
+        -a $REPODIR/vbmeta.img.sha256 \
+        -m "$DEVICE: $DATE" \
+        -t $(git -C $REPODIR rev-parse HEAD) \
+        $RELEASENAME
+else
+    hub -C $REPODIR release create \
+        -a $BUILDDIR/$RECOVERY_NAME \
+        -a $REPODIR/$RECOVERY_NAME.sha256 \
+        -a $ZIP \
+        -a $REPODIR/$FILENAME.sha256 \
+        -m "$DEVICE: $DATE" \
+        -t $(git -C $REPODIR rev-parse HEAD) \
+        $RELEASENAME
+fi
 
 git -C $REPODIR push origin HEAD:master --tags
 git -C $REPODIR push origin --delete staging
