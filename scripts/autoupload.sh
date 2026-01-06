@@ -20,8 +20,8 @@ cp $BUILDDIR/recovery.img $BUILDDIR/$RECOVERY_NAME
 echo "$(sha256sum $ZIP | cut -f1 -d ' ') $FILENAME" > $REPODIR/$FILENAME.sha256
 echo "$(sha256sum $BUILDDIR/$RECOVERY_NAME | cut -f1 -d ' ') $RECOVERY_NAME" > $REPODIR/$RECOVERY_NAME.sha256
 
-# If device is dm1q, include vbmeta.img
-if [ "$DEVICE" = "dm1q" ]; then
+# If device is dm1q or q5q, include vbmeta.img
+if [ "$DEVICE" = "dm1q" ] || [ "$DEVICE" = "q5q" ]; then
     echo "$(sha256sum $BUILDDIR/vbmeta.img | cut -f1 -d ' ') vbmeta.img" > $REPODIR/vbmeta.img.sha256
 fi
 
@@ -35,7 +35,7 @@ hub -C $REPODIR release create \
     -a $REPODIR/$RECOVERY_NAME.sha256 \
     -a $ZIP \
     -a $REPODIR/$FILENAME.sha256 \
-    $( [ "$DEVICE" = "dm1q" ] && echo "-a $BUILDDIR/vbmeta.img -a $REPODIR/vbmeta.img.sha256" ) \
+    $( [ "$DEVICE" = "dm1q" || "$DEVICE" = "q5q" ] && echo "-a $BUILDDIR/vbmeta.img -a $REPODIR/vbmeta.img.sha256" ) \
     -m "$DEVICE: $DATE" \
     -t $(git -C $REPODIR rev-parse HEAD) \
     $RELEASENAME
@@ -44,6 +44,6 @@ git -C $REPODIR push origin HEAD:master --tags
 git -C $REPODIR push origin --delete staging
 
 rm $REPODIR/$FILENAME.sha256 $REPODIR/$RECOVERY_NAME.sha256 $BUILDDIR/$RECOVERY_NAME
-if [ "$DEVICE" = "dm1q" ]; then
+if [ "$DEVICE" = "dm1q" ] || [ "$DEVICE" = "q5q" ]; then
     rm $REPODIR/vbmeta.img.sha256 $BUILDDIR/vbmeta.img
 fi

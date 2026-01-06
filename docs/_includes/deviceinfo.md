@@ -78,14 +78,36 @@
             <td align="left">Battery</td>
             <td align="left">{{ device.battery }}</td>
         </tr>
+{% if device.dimensions_folded and device.dimensions_unfolded %}
+        <tr>
+            <td align="left">Dimensions (Folded)</td>
+            <td align="left">{{ device.dimensions_folded }}</td>
+        </tr>
+        <tr>
+            <td align="left">Dimensions (Unfolded)</td>
+            <td align="left">{{ device.dimensions_unfolded }}</td>
+        </tr>
+{% else %}
         <tr>
             <td align="left">Dimensions</td>
             <td align="left">{{ device.dimensions }}</td>
         </tr>
+{% endif %}
+{% if device.display_outer and device.display_inner %}
+        <tr>
+            <td align="left">Display (Outer)</td>
+            <td align="left">{{ device.display_outer }}</td>
+        </tr>
+        <tr>
+            <td align="left">Display (Inner)</td>
+            <td align="left">{{ device.display_inner }}</td>
+        </tr>
+{% else %}
         <tr>
             <td align="left">Display</td>
             <td align="left">{{ device.display }}</td>
         </tr>
+{% endif %}
 {% for rear_camera in device.rear_cameras %}
         <tr>
             <td align="left">Rear Camera</td>
