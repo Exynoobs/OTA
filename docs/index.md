@@ -3,6 +3,8 @@ layout: default
 title: LineageOS builds by Exynoobs
 ---
 
+If you support my work, you can buy me a coffee [here](https://www.paypal.com/paypalme/josipkc)
+
 # Supported devices
 
 {% assign sorted_pages = site.pages | sort: 'title' %}
@@ -15,7 +17,3 @@ title: LineageOS builds by Exynoobs
   {% endunless %}
   {% endif %}
   {% endfor %}
-
----
-
-If you support my work, you can buy me a coffee [here](https://www.paypal.com/paypalme/josipkc)

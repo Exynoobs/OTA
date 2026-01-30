@@ -1,6 +1,8 @@
 {% assign device = site.data.devices[page.codename] %}
 [Home]({{ "/" | relative_url }})
 
+If you support my work, you can buy me a coffee [here](https://www.paypal.com/paypalme/josipkc)
+
 # {{ page.title }} ({{ page.codename }})
 
 [Changelog]({{ "/changes/" | append: page.codename | append: ".html" | relative_url }})
@@ -132,7 +134,3 @@
         </tr>
     </tbody>
 </table>
-
----
-
-If you support my work, you can buy me a coffee [here](https://www.paypal.com/paypalme/josipkc)

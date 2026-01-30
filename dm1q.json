@@ -1,13 +1,13 @@
 {
   "response": [
     {
-      "datetime": "1766592706",
-      "filename": "lineage-23.0-20251224-UNOFFICIAL-dm1q.zip",
-      "id": "962ae478bc44012ff9496ef0546075ac88d0e8fb8b0cbe33781fd84a010dd3ba",
+      "datetime": "1769769397",
+      "filename": "lineage-23.2-20260130-UNOFFICIAL-dm1q.zip",
+      "id": "4d396afca7837f5b7666560a0d5e27a7a0491f2db79064bc233d12abd36bfba4",
       "romtype": "UNOFFICIAL",
-      "size": "1531742481",
-      "url": "https://github.com/Exynoobs/OTA/releases/download/dm1q-20251224/lineage-23.0-20251224-UNOFFICIAL-dm1q.zip",
-      "version": "23.0"
+      "size": "1556594072",
+      "url": "https://github.com/Exynoobs/OTA/releases/download/dm1q-20260130/lineage-23.2-20260130-UNOFFICIAL-dm1q.zip",
+      "version": "23.2"
     }
   ]
 }
