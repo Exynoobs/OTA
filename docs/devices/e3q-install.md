@@ -31,7 +31,7 @@ codename: e3q
 
 ## Pre-Install instructions (unlock + vbmeta)
 
-- STOCK S928BXXS3AXK3 OR equivalent for your device model is required
+- STOCK S928BXXS4BYH2 OR equivalent for your device model is required
 - Enable Developer options, then enable OEM unlock.
 - Download `vbmeta.img` (link above). Create a TAR for flashing tools that require it:
 
