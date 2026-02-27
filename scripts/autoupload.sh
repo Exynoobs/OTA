@@ -25,7 +25,7 @@ if [ "$DEVICE" = "dm1q" ] || [ "$DEVICE" = "q5q" ] || [ "$DEVICE" = "e3q" ]; the
     echo "$(sha256sum $BUILDDIR/vbmeta.img | cut -f1 -d ' ') vbmeta.img" > $REPODIR/vbmeta.img.sha256
 fi
 
-git -C $REPODIR add ../$DEVICE.json
+git -C $REPODIR add $DEVICE.json
 git -C $REPODIR commit -m "OTA: $DEVICE: $DATE"
 git -C $REPODIR tag "$RELEASENAME"
 git -C $REPODIR push origin HEAD:staging --tags
