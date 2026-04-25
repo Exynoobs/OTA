@@ -23,8 +23,8 @@ codename: b5q
 
 ## Tips for Z Flip5
 
-- Use recovery on the cover screen while folded.
-- For first boot and initial setup, keep the device unfolded.
+- Use recovery on the inner screen.
+- Use volume buttons to navigate
 
 ## Basic requirements
 
