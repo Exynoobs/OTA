@@ -1,0 +1,20 @@
+models: SM-F731B
+recovery_size: 67633152
+
+chipset: Qualcomm SM8550-AC Snapdragon 8 Gen 2 (4 nm)
+cpu: Octa-core (1x3.36 GHz Cortex-X3 & 2x2.8 GHz Cortex-A715 & 2x2.8 GHz Cortex-A710 & 3x2.0 GHz Cortex-A510)
+gpu: Adreno 740
+ram: 8GB RAM
+shipped_version: Android 13
+storage: 256GB, 512GB
+sim: Nano-SIM + eSIM, Nano-SIM + Nano-SIM + eSIM (max 2 at a time)
+battery: Li-Po 3700 mAh
+dimensions_folded: 85.1 x 71.9 x 15.1 mm
+dimensions_unfolded: 165.1 x 71.9 x 6.9 mm
+display_inner: 6.7 inches, 1080 x 2640 pixels, 22:9 ratio (~425 ppi density)
+display_outer: 3.4 inches, 720 x 748 pixels (~306 ppi density)
+rear_cameras: 12 MP, f/1.8, 24mm (wide), 1/1.76", 1.8um, dual pixel PDAF, OIS
+  12 MP, f/2.2, 123deg (ultrawide), 1/3.06", 1.12um
+front_camera: 10 MP, f/2.2, 23mm (wide), 1/3.0", 1.22um
+fingerprint: Fingerprint (side-mounted)
+sensors: accelerometer, gyro, proximity, compass, barometer
