@@ -1,3 +1,13 @@
 {
-  "response": []
+  "response": [
+    {
+      "datetime": "1777115850",
+      "filename": "lineage-23.2-20260425-UNOFFICIAL-b5q.zip",
+      "id": "4ba97328d468bf90805f01b402262a630481f3a9c5e209385416ed44f90bfbb2",
+      "romtype": "UNOFFICIAL",
+      "size": "1595798494",
+      "url": "https://github.com/Exynoobs/OTA/releases/download/b5q-20260425/lineage-23.2-20260425-UNOFFICIAL-b5q.zip",
+      "version": "23.2"
+    }
+  ]
 }
