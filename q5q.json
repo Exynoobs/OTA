@@ -1,12 +1,12 @@
 {
   "response": [
     {
-      "datetime": "1784620642",
-      "filename": "lineage-23.2-20260721-UNOFFICIAL-q5q.zip",
-      "id": "369956f1fd1f9e6284b66372384462c6d90567700142ae507ed0113ba9ed75e3",
+      "datetime": "1785063915",
+      "filename": "lineage-23.2-20260726-UNOFFICIAL-q5q.zip",
+      "id": "d9ee049dd372bcf60cd19ae5c54f0b0490ad33fe10e23070188641cbf8c4b50f",
       "romtype": "UNOFFICIAL",
-      "size": "1648101561",
-      "url": "https://github.com/Exynoobs/OTA/releases/download/q5q-20260721/lineage-23.2-20260721-UNOFFICIAL-q5q.zip",
+      "size": "1654703721",
+      "url": "https://github.com/Exynoobs/OTA/releases/download/q5q-20260726/lineage-23.2-20260726-UNOFFICIAL-q5q.zip",
       "version": "23.2"
     }
   ]
