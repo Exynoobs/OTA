@@ -12,9 +12,11 @@ microsd: microSDXC (uses shared SIM slot) - dual SIM model only
 battery: 3500 mAh Li-Ion (non-removable)
 dimensions: 158.1 x 73.8 x 8.5 mm (6.22 x 2.91 x 0.33 in)
 display: 6.2 inches, 98.3 cm2 (~84.2% screen-to-body ratio)
-rear_cameras: 12 MP, f/1.5-2.4, 26mm (wide), 1/2.55", 1.4µm, Dual Pixel PDAF, OIS
-              12 MP, f/2.4, 52mm (telephoto), 1/3.6", 1.0µm, AF, OIS, 2x optical zoom
-front_camera: 8 MP, f/1.7, 25mm (wide), 1/3.6", 1.22µm, AF
-              2 MP (dedicated iris scanner camera)
+rear_cameras:
+  - 12 MP, f/1.5-2.4, 26mm (wide), 1/2.55", 1.4µm, Dual Pixel PDAF, OIS
+  - 12 MP, f/2.4, 52mm (telephoto), 1/3.6", 1.0µm, AF, OIS, 2x optical zoom
+front_cameras:
+  - 8 MP, f/1.7, 25mm (wide), 1/3.6", 1.22µm, AF
+  - 2 MP (dedicated iris scanner camera)
 fingerprint: rear-mounted fingerprint
 sensors: Iris scanner, fingerprint (rear-mounted), accelerometer, gyro, proximity, compass, barometer, heart rate, SpO2

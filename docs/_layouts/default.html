@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}Exynoobs LineageOS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+{%- assign is_doc = false -%}
+{%- if page.url contains '/changes/' or page.url contains '-install' or page.url contains '-upgrade' -%}
+  {%- assign is_doc = true -%}
+{%- endif -%}
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Exynoobs <span class="brand-sub">LineageOS</span></span>
+      </a>
+      <nav class="topnav">
+        {%- if page.codename %}
+        <a href="{{ '/devices/' | append: page.codename | append: '.html' | relative_url }}">{{ page.codename }}</a>
+        {%- endif %}
+        <a href="{{ '/' | relative_url }}">Devices</a>
+        <a class="btn btn-accent" href="https://www.paypal.com/paypalme/josipkc">Buy me a coffee</a>
+      </nav>
+    </div>
+  </header>
+
+  {%- if is_doc %}
+  <main class="container doc-layout">
+    <aside class="toc" id="toc" hidden>
+      <div class="toc-title">On this page</div>
+      <nav id="toc-list"></nav>
+    </aside>
+    <article class="prose" id="content">
+      {{ content }}
+    </article>
+  </main>
+  {%- else %}
+  <main class="container" id="content">
+    {{ content }}
+  </main>
+  {%- endif %}
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>Unofficial LineageOS builds by Exynoobs</span>
+      <a href="https://github.com/Exynoobs/OTA">GitHub</a>
+    </div>
+  </footer>
+
+  {%- if is_doc %}
+  <script>
+    (function () {
+      var content = document.getElementById('content');
+      var heads = content.querySelectorAll('h2');
+      if (heads.length < 3) return;
+      var list = document.getElementById('toc-list');
+      heads.forEach(function (h) {
+        if (!h.id) h.id = h.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        var a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.textContent = h.textContent;
+        list.appendChild(a);
+      });
+      document.getElementById('toc').hidden = false;
+      var links = list.querySelectorAll('a');
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          links.forEach(function (l) {
+            l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id);
+          });
+        });
+      }, { rootMargin: '-80px 0px -70% 0px' });
+      heads.forEach(function (h) { obs.observe(h); });
+    })();
+  </script>
+  {%- endif %}
+</body>
+</html>

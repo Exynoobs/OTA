@@ -19,7 +19,8 @@ codename: b5q
 >
 > Recovery: <a href="{{ recovery_url }}">recovery.img</a> - <a href="{{ recovery_url }}.sha256">sha256</a>
 >
-> vbmeta: <a href="{{ vbmeta_url }}">vbmeta.img</a> - <a href="{{ vbmeta_url }}.sha256">sha256</a> > {% endif %}
+> vbmeta: <a href="{{ vbmeta_url }}">vbmeta.img</a> - <a href="{{ vbmeta_url }}.sha256">sha256</a>
+{% endif %}
 
 ## Tips for Z Flip5
 

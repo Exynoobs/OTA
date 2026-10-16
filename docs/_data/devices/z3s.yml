@@ -12,10 +12,12 @@ microsd: Up to 512 GB (uses shared SIM slot)
 battery: 5000 mAh Li-Ion (non-removable)
 dimensions: 151.7 x 69.1 x 7.9 mm (5.97 x 2.72 x 0.31 in)
 display: 6.9 inches, 114.0 cm2 (~89.9% screen-to-body ratio)
-rear_cameras: 108 MP, f/1.8, 26mm (wide), 1/1.33", 0.8µm, PDAF, OIS
-              48 MP, f/3.5, 103mm (periscope telephoto), 1/2.0", 0.8µm, PDAF, OIS, 4x optical zoom, 10x hybrid zoom
-              12 MP, f/2.2, 13mm, 120˚ (ultrawide), 1/2.55" 1.4µm, Super Steady video
-              0.3 MP, TOF 3D, f/1.0, (depth)
-front_camera: 40 MP, f/2.2, 26mm (wide), 1/2.8", 0.7µm, PDAF
+rear_cameras:
+  - 108 MP, f/1.8, 26mm (wide), 1/1.33", 0.8µm, PDAF, OIS
+  - 48 MP, f/3.5, 103mm (periscope telephoto), 1/2.0", 0.8µm, PDAF, OIS, 4x optical zoom, 10x hybrid zoom
+  - 12 MP, f/2.2, 13mm, 120˚ (ultrawide), 1/2.55" 1.4µm, Super Steady video
+  - 0.3 MP, TOF 3D, f/1.0, (depth)
+front_cameras:
+  - 40 MP, f/2.2, 26mm (wide), 1/2.8", 0.7µm, PDAF
 fingerprint: under display, ultrasonic
 sensors: accelerometer, gyro, proximity, compass, barometer
