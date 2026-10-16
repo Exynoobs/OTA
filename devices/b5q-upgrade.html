@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Upgrade instructions - Samsung Galaxy Z Flip5</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Upgrade instructions - Samsung Galaxy Z Flip5" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Upgrade instructions - Samsung Galaxy Z Flip5" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Upgrade instructions - Samsung Galaxy Z Flip5","url":"/OTA/devices/b5q-upgrade.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/OTA/assets/css/style.css?v=">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/OTA/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name">Upgrade instructions - Samsung Galaxy Z Flip5</h1>
+      <h2 class="project-tagline"></h2>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="upgrade-instructions-for-samsung-galaxy-z-flip5-b5q">Upgrade instructions for Samsung Galaxy Z Flip5 (b5q)</h1>
+
+<blockquote>
+  <p>Latest build: <a href="https://github.com/Exynoobs/OTA/releases/download/b5q-20260425/lineage-23.2-20260425-UNOFFICIAL-b5q.zip">lineage-23.2-20260425-UNOFFICIAL-b5q.zip</a> — <a href="https://github.com/Exynoobs/OTA/releases/download/b5q-20260425/lineage-23.2-20260425-UNOFFICIAL-b5q.zip.sha256">sha256</a></p>
+
+  <p>Recovery: <a href="https://github.com/Exynoobs/OTA/releases/download/b5q-20260425/lineage-23.2-20260425-recovery-b5q.img">recovery.img</a> — <a href="https://github.com/Exynoobs/OTA/releases/download/b5q-20260425/lineage-23.2-20260425-recovery-b5q.img.sha256">sha256</a></p>
+</blockquote>
+
+<h2 id="tips-for-z-flip5">Tips for Z Flip5</h2>
+
+<ul>
+  <li>Use recovery on the inner screen.</li>
+  <li>Use volume buttons to navigate</li>
+</ul>
+
+<h2 id="basic-requirements">Basic requirements</h2>
+
+<ol>
+  <li>Read through the instructions at least once before actually following them, so as to avoid any problems due to any missed steps!</li>
+  <li>You actually want to upgrade your device to the newest version - if you wish to downgrade to an earlier version of LineageOS, follow your device’s <a href="/OTA/devices/b5q-install.html">install instructions</a> for installing LineageOS the first time.</li>
+</ol>
+
+<h2 id="manually-upgrading-lineageos">Manually upgrading LineageOS</h2>
+
+<blockquote>
+  <p>Following these instructions will <strong>not</strong> wipe your data. It is, however, recommended to save important data before doing so, anyway!</p>
+</blockquote>
+
+<p>The updater app does not support upgrades from one version of LineageOS to another, and will block installation to any update for a different version. Upgrading manually requires similar steps to installing LineageOS for the first time.</p>
+
+<ol>
+  <li>Verify your device is using the latest Lineage Recovery (link above). Follow your device’s <a href="/OTA/devices/b5q-install.html">install instructions</a> to see how you can update your recovery image.
+    <ul>
+      <li>These instructions may not work if you choose to use a different recovery!</li>
+    </ul>
+  </li>
+  <li>Download the LineageOS zip file (link above).</li>
+  <li>If you are currently using (or now want to use) an application package add-on such as <a href="https://wiki.lineageos.org/gapps">Google Apps</a>, you have the following options:
+    <ul>
+      <li>keep using them: Download the appropriate version <a href="https://wiki.lineageos.org/gapps">now</a> (use the <code class="language-plaintext highlighter-rouge">arm64</code> architecture)</li>
+      <li>remove them: You can only do so by performing a factory reset, which will also remove all your data.</li>
+      <li>start using them: You can only do so by performing a factory reset, which will also remove all your data. Download the appropriate version <a href="https://wiki.lineageos.org/gapps">now</a> (use the <code class="language-plaintext highlighter-rouge">arm64</code> architecture)</li>
+    </ul>
+  </li>
+  <li>Make sure your computer has working <code class="language-plaintext highlighter-rouge">adb</code>.</li>
+  <li>Enable USB debugging on your device.</li>
+  <li>Run:</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adb <span class="nt">-d</span> reboot sideload
+</code></pre></div></div>
+
+<ul>
+  <li>The device may reboot to a blank black screen, fear not, this is a known bug on some recoveries, proceed with the instructions.</li>
+</ul>
+
+<ol>
+  <li>Run (inserting the path to your LineageOS package):</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adb <span class="nt">-d</span> sideload /path/to/zip
+</code></pre></div></div>
+
+<p>Tip: Normally, <code class="language-plaintext highlighter-rouge">adb</code> reports <code class="language-plaintext highlighter-rouge">Total xfer: 1.00x</code>, but in some cases, even if the process succeeds, the output may stop at 47% and show <code class="language-plaintext highlighter-rouge">adb: failed to read command: Success</code>. It might also display <code class="language-plaintext highlighter-rouge">adb: failed to read command: No error</code> or <code class="language-plaintext highlighter-rouge">adb: failed to read command: Undefined error: 0</code> which is also fine.</p>
+
+<ol>
+  <li><em>(Optionally)</em>: If you want to install any add-ons, click <code class="language-plaintext highlighter-rouge">Apply update</code>, then <code class="language-plaintext highlighter-rouge">Apply from ADB</code>, then run for each of those packages in sequence:</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adb <span class="nt">-d</span> sideload /path/to/zip
+</code></pre></div></div>
+
+<ul>
+  <li>If you previously had any Google Apps add-on package installed on your device, you must install an updated package <strong>before</strong> the first boot of Android! If you did not have Google Apps installed, you must wipe the <strong>Data</strong> partition (or perform a factory reset) to install them.</li>
+  <li>Add-ons aren’t signed with LineageOS’s official key, and therefore when they are sideloaded, Lineage Recovery will present a screen that says <code class="language-plaintext highlighter-rouge">Signature verification failed</code>, this is expected, please click <code class="language-plaintext highlighter-rouge">Continue</code>.</li>
+</ul>
+
+<ol>
+  <li>Once you have installed everything successfully, click the back arrow in the top left of the screen, then “Reboot system now”.</li>
+</ol>
+
+
+      <footer class="site-footer">
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>
