@@ -11,7 +11,7 @@ If you support my work, you can buy me a coffee [here](https://www.paypal.com/pa
 
 {% for page in sorted_pages %}
 {% if page.title and page.url and page.url contains "/devices/" %}
-{% unless page.url contains "-install" %}
+{% unless page.url contains "-install" or page.url contains "-upgrade" %}
 
 - [{{ page.title }} ({{ page.codename }})]({{ page.url | relative_url }})
   {% endunless %}
