@@ -1,12 +1,12 @@
 {
   "response": [
     {
-      "datetime": "1792148337",
+      "datetime": "1792166037",
       "filename": "lineage-24.0-20261016-UNOFFICIAL-b5q.zip",
-      "id": "eb6652714d747a39b2b8496c4fd4d146922b96f3a24e991c02e75ff8bf345d68",
+      "id": "afd8961bfd766388902900142fb324f6d150594ed17e962a4b4bfe2f0a831a6c",
       "romtype": "UNOFFICIAL",
-      "size": "1635138788",
-      "url": "https://github.com/Exynoobs/OTA/releases/download/b5q-20261016/lineage-24.0-20261016-UNOFFICIAL-b5q.zip",
+      "size": "1635113603",
+      "url": "https://github.com/Exynoobs/OTA/releases/download/b5q-20261016-2/lineage-24.0-20261016-UNOFFICIAL-b5q.zip",
       "version": "24.0"
     }
   ]
