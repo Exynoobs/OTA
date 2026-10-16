@@ -15,6 +15,15 @@ DATE=$(echo $FILENAME | cut -f3 -d '-')
 RECOVERY_NAME=$(echo $FILENAME | sed 's/UNOFFICIAL/recovery/g' | sed 's/\.zip/.img/g')
 RELEASENAME="$DEVICE-$DATE"
 
+# Avoid colliding with an existing same-day release
+if git -C $REPODIR ls-remote --exit-code --tags origin "refs/tags/$RELEASENAME" >/dev/null; then
+    N=2
+    while git -C $REPODIR ls-remote --exit-code --tags origin "refs/tags/$RELEASENAME-$N" >/dev/null; do
+        N=$((N+1))
+    done
+    RELEASENAME="$RELEASENAME-$N"
+fi
+
 $SCRIPTDIR/otainfo.sh $ZIP $(hub -C $REPODIR browse -u) $RELEASENAME > $REPODIR/$DEVICE.json
 cp $BUILDDIR/recovery.img $BUILDDIR/$RECOVERY_NAME
 echo "$(sha256sum $ZIP | cut -f1 -d ' ') $FILENAME" > $REPODIR/$FILENAME.sha256
