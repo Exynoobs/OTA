@@ -15,6 +15,12 @@ DATE=$(echo $FILENAME | cut -f3 -d '-')
 RECOVERY_NAME=$(echo $FILENAME | sed 's/UNOFFICIAL/recovery/g' | sed 's/\.zip/.img/g')
 RELEASENAME="$DEVICE-$DATE"
 
+# Devices that ship vbmeta.img alongside the OTA
+case "$DEVICE" in
+    b5q|dm1q|e3q|q5q) HAS_VBMETA=1 ;;
+    *) HAS_VBMETA=0 ;;
+esac
+
 # Avoid colliding with an existing same-day release
 if git -C $REPODIR ls-remote --exit-code --tags origin "refs/tags/$RELEASENAME" >/dev/null; then
     N=2
@@ -29,8 +35,7 @@ cp $BUILDDIR/recovery.img $BUILDDIR/$RECOVERY_NAME
 echo "$(sha256sum $ZIP | cut -f1 -d ' ') $FILENAME" > $REPODIR/$FILENAME.sha256
 echo "$(sha256sum $BUILDDIR/$RECOVERY_NAME | cut -f1 -d ' ') $RECOVERY_NAME" > $REPODIR/$RECOVERY_NAME.sha256
 
-# If device is dm1q, q5q or e3q, include vbmeta.img
-if [ "$DEVICE" = "dm1q" ] || [ "$DEVICE" = "q5q" ] || [ "$DEVICE" = "e3q" ]; then
+if [ "$HAS_VBMETA" = 1 ]; then
     echo "$(sha256sum $BUILDDIR/vbmeta.img | cut -f1 -d ' ') vbmeta.img" > $REPODIR/vbmeta.img.sha256
 fi
 
@@ -39,7 +44,7 @@ git -C $REPODIR commit -m "OTA: $DEVICE: $DATE"
 git -C $REPODIR tag "$RELEASENAME"
 git -C $REPODIR push origin HEAD:staging --tags
 
-if [ "$DEVICE" = "dm1q" ] || [ "$DEVICE" = "q5q" ] || [ "$DEVICE" = "e3q" ]; then
+if [ "$HAS_VBMETA" = 1 ]; then
     hub -C $REPODIR release create \
         -a $BUILDDIR/$RECOVERY_NAME \
         -a $REPODIR/$RECOVERY_NAME.sha256 \
@@ -65,6 +70,6 @@ git -C $REPODIR push origin HEAD:master --tags
 git -C $REPODIR push origin --delete staging
 
 rm $REPODIR/$FILENAME.sha256 $REPODIR/$RECOVERY_NAME.sha256 $BUILDDIR/$RECOVERY_NAME
-if [ "$DEVICE" = "dm1q" ] || [ "$DEVICE" = "q5q" ] || [ "$DEVICE" = "e3q" ]; then
+if [ "$HAS_VBMETA" = 1 ]; then
     rm $REPODIR/vbmeta.img.sha256 $BUILDDIR/vbmeta.img
 fi
