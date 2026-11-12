@@ -1,12 +1,12 @@
 {
   "response": [
     {
-      "datetime": "1792740460",
-      "filename": "lineage-24.0-20261023-UNOFFICIAL-e3q.zip",
-      "id": "aeab7d962eb99ccfcd52cd497a65ce55e0c57baed024e3765db1126572bcd605",
+      "datetime": "1794484088",
+      "filename": "lineage-24.0-20261112-UNOFFICIAL-e3q.zip",
+      "id": "c53e86e2d0cb5c1ed786b4bf19bff6ade4f946d511b80b7bf097d27bf4c18695",
       "romtype": "UNOFFICIAL",
-      "size": "1862173051",
-      "url": "https://github.com/Exynoobs/OTA/releases/download/e3q-20261023/lineage-24.0-20261023-UNOFFICIAL-e3q.zip",
+      "size": "1928250991",
+      "url": "https://github.com/Exynoobs/OTA/releases/download/e3q-20261112/lineage-24.0-20261112-UNOFFICIAL-e3q.zip",
       "version": "24.0"
     }
   ]
